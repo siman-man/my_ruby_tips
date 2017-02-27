@@ -1,0 +1,6 @@
+# RubyMine
+.idea
+
+# bundler
+/vendor/bundle
+.bundle
