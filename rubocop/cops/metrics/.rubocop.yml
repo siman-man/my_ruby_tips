@@ -1,5 +1,7 @@
 Metrics/BlockLength:
-  Max: 10
+  Max: 25
 Metrics/BlockNesting:
   CountBlocks: true
-  Max: 1
+  Max: 3
+Metrics/ParameterLists:
+  CountKeywordArgs: false

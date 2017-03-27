@@ -1,24 +1,18 @@
 require 'rubocop'
+require 'method_source'
 require 'parser/current'
 require 'pp'
 
 include RuboCop::Cop::Metrics
 
-code =<<-CODE
 def hello
-  n = 3
-  3 if true
-  case n
-  when 0
-  when 1
-  when 2
-  else
+  if true
+  elsif true
   end
 end
-CODE
 
-buffer = Parser::Source::Buffer.new('(string)', 1)
-buffer.source = code
+buffer = Parser::Source::Buffer.new('(string)')
+buffer.source = method(:hello).source
 builder = RuboCop::AST::Builder.new
 node = Parser::CurrentRuby.new(builder).parse(buffer)
 
