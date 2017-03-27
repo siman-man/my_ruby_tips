@@ -1,18 +1,20 @@
 require 'rubocop'
-require 'method_source'
 require 'parser/current'
-require 'pp'
 
 include RuboCop::Cop::Metrics
 
+code =<<-CODE
 def hello
-  3 if true
+  a = 1
+  b = 1
+  c = 1
 end
+CODE
 
 buffer = Parser::Source::Buffer.new('(string)')
-buffer.source = method(:hello).source
+buffer.source = code
 builder = RuboCop::AST::Builder.new
 node = Parser::CurrentRuby.new(builder).parse(buffer)
 
 n = RuboCop::Cop::VariableForce::Scope.new(node)
-p AbcSize.new.send(:complexity, n)
+puts "cost = #{AbcSize.new.send(:complexity, n)}"
