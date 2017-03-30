@@ -1,0 +1,24 @@
+Rails/Date:
+  Enabled: true
+Rails/Delegate:
+  Enabled: true
+Rails/EnumUniqueness:
+  Include:
+    - enum_uniqueness.rb
+Rails/FindEach:
+  Include:
+    - find_each.rb
+Rails/OutputSafety:
+  Enabled: true
+  Include:
+    - output_safety.rb
+Rails/ReadWriteAttribute:
+  Include:
+    - read_write_attribute.rb
+Rails/RequestReferer:
+  EnforcedStyle: referrer
+  Include:
+    - request_referer.rb
+Rails/ScopeArgs:
+  Include:
+    - scope_args.rb
