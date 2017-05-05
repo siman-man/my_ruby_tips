@@ -1,0 +1,9 @@
+task default: %w(foo bar)
+
+task :foo do
+  puts 'foo =>'
+end
+
+task :bar do
+  puts 'bar =>'
+end
