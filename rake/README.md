@@ -20,3 +20,12 @@ task foo: [:task_before] do
   puts "foo =>"
 end
 ```
+
+### clean task
+
+```ruby
+require 'rake/clean'
+
+CLEAN.include %w(*.txt)
+CLOBBER.include %w(*.md)
+```
